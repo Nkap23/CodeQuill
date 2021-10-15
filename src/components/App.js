@@ -74,7 +74,9 @@ function App() {
         maxWidth="90%"
       >
          <div className="bg-defbg h-screen">
-           <div className="h-2/3"></div>
+           <div className="h-2/3">
+             <iframe srcDoc={icode} sandbox="allow-scripts" title="output" frameBorder="0"></iframe>
+           </div>
            <div className="h-1/3">
              <div className="h-1.2 bg-blue-800 text-white flex flex-col justify-around pl-5">Console</div>
              <div className="h-8.8 bg-gray-800"></div>
