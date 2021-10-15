@@ -5,11 +5,23 @@ import Editor from "./Editor";
 
 function App() {
 
+  const [HTML,setHTML]=useState('');
+  const [CSS,setCSS]=useState('');
+  const [JS,setJS]=useState('');
+
   const screenWidth=window.screen.width;
   const [paneWidth,setPaneWidth]=useState({
     widthA:0.3*screenWidth,
     widthB:0.7*screenWidth
   });
+
+  const icode=`
+    <html>
+      <style>${CSS}</style>
+      <body>${HTML}</body>
+      <script>${JS}</script>
+    </html>
+  `;
 
   //on device screen resize 
 
@@ -39,9 +51,9 @@ function App() {
         minWidth="10%"
         maxWidth="90%"
       >
-        <Editor language="xml" name="HTML" />
-        <Editor language="css" name="CSS"/>
-        <Editor language="javascript" name="JavaScript" />
+        <Editor language="xml" name="HTML" value={HTML} onChange={setHTML}/>
+        <Editor language="css" name="CSS" value={CSS} onChange={setCSS}/>
+        <Editor language="javascript" name="JavaScript" value={JS} onChange={setJS} />
       </Resizable>
       <Resizable 
         size={{

@@ -15,6 +15,10 @@ function Editor(props) {
                 {props.name}
             </div>
             <CEditor className="h-8.8"
+                value={props.value}
+                onBeforeChange={(editor,data,value)=>{
+                    props.onChange(value);
+                }}
                 options={{
                     mode: props.language,
                     lineNumbers:true,
