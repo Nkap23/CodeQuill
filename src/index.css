@@ -7,3 +7,6 @@ body{
   padding:0;
   border:0;
 }
+iframe div{
+  word-wrap: break-word;
+}
