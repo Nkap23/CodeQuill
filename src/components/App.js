@@ -27,19 +27,41 @@ function App() {
   },[])
 
 
-  const icode=`
-    <html>
-      <style>${CSS}</style>
+  const icode=`<html>
+      <style>
+        ${CSS}
+      </style>
       <body>
-        <div style="word-wrap: break-word">${HTML}</div>
+        <div style="word-wrap: break-word">
+          ${HTML}
+        </div>
       </body>
-      <script>${JS}</script>
+      <script>
+        ${JS}
+      </script>
     </html>
   `;
 
+  const downloadCode=()=>{
+    const element=document.createElement("a");
+    const file=new Blob([icode],{type:'text/plain'});
+    element.href=URL.createObjectURL(file);
+    element.download="codequill.html";
+    document.body.appendChild(element);
+    element.click();
+  }
+
   return(
     <>
-      <div className="font-black h-6v bg-gray-800 text-defbg flex flex-col justify-around pl-5">CodeQuill</div>
+      <div className="font-black h-6v bg-gray-800 text-defbg flex flex-col justify-around pl-5">
+        <div>
+          CodeQuill
+          <button type="button" className="bg-green-800 hover:bg-blue-500 rounded px-3 float-right mr-5"
+          onClick={downloadCode}>
+            Download Code
+          </button>
+        </div>
+      </div>
       <div className="h-94v sm:flex overflow-hidden">
         <Resizable 
           size={{
