@@ -62,17 +62,20 @@ function App() {
             bottomLeft:false,
             topLeft:false,
           }}
-          minWidth= { screenWidth>=640 ? "10%" : "100%" }
-          maxWidth= { screenWidth>=640 ? "90%" : "100%" }
-          maxHeight= { screenWidth>=640 ? "100%" : "33.3%"}
+          minWidth = { screenWidth>=640 ? "10%" : "100%" }
+          maxWidth = { screenWidth>=640 ? "90%" : "100%" }
+          maxHeight = { screenWidth>=640 ? "100%" : "33.3%"}
         >
           <div className="sm:hidden h-1.2 bg-green-800 text-white pl-5">
             <div className={"inline-block h-full px-1 mr-3 "+(activePane===0? "bg-green-500" : "")}
-            onClick={()=>setActivePane(0)}>HTML</div>
+            onClick={()=>setActivePane(0)}>
+              HTML</div>
             <div className={"inline-block h-full px-1 mr-3 "+(activePane===1? "bg-green-500" : "")}
-            onClick={()=>setActivePane(1)}>CSS</div>
+            onClick={()=>setActivePane(1)}>
+              CSS</div>
             <div className={"inline-block h-full px-1 mr-3 "+(activePane===2? "bg-green-500" : "")}
-            onClick={()=>setActivePane(2)}>JavaScript</div>
+            onClick={()=>setActivePane(2)}>
+              JavaScript</div>
           </div>
           <span className={ activePane===0 ? "h-auto" : "hidden sm:inline" }>
             <Editor language="xml" name="HTML" value={HTML} onChange={setHTML} />

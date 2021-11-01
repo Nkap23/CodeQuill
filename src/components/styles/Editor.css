@@ -4,11 +4,3 @@
 .myshadow{
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
-.CodeMirror-sizer{
-    margin-left:29px;
-    margin-bottom:0px;
-    border-right-width:50px;
-    min-height:27px;
-    padding-right:0px;
-    padding-bottom:0px;
-}
